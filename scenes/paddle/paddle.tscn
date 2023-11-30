@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmg0a6omti06x"]
 
 [ext_resource type="Script" path="res://scenes/paddle/paddle.gd" id="1_kcb3e"]
-[ext_resource type="Texture2D" uid="uid://crxx5p5rgms0f" path="res://resources/Tiles/tile_0089.png" id="2_ev4e1"]
+[ext_resource type="Texture2D" uid="uid://bjgqrrltha5da" path="res://resources/square.png" id="2_2higq"]
 
 [node name="Paddle" type="CharacterBody2D"]
 scale = Vector2(5, 5)
@@ -12,7 +12,30 @@ platform_on_leave = 2
 script = ExtResource("1_kcb3e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ev4e1")
+position = Vector2(-1.19209e-07, -6.85453e-07)
+scale = Vector2(0.0384615, 0.122449)
+texture = ExtResource("2_2higq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(3, 0, 3, -2.4, 2.8, -6.2, 2.4, -8.4, 2, -8.8, 1.4, -9, -3, -9, -3, 9, 1.2, 9, 1.8, 8.6, 2.4, 8, 2.8, 6, 3, 2.4)
+polygon = PackedVector2Array(3, 0, 3, -2.4, 2.8, -6.2, 2.4, -8.4, 2, -8.8, 1.4, -9, -3, -9, -3, 9, 1.4, 9, 2, 8.8, 2.4, 8.4, 2.8, 6.2, 3, 2.4)
+
+[node name="Aimer" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Aimer"]
+scale = Vector2(1, 1)
+width = 3.0
+
+[node name="BezierPoints" type="Node2D" parent="Aimer"]
+metadata/_edit_lock_ = true
+
+[node name="p0" type="Marker2D" parent="Aimer/BezierPoints"]
+position = Vector2(8, -9)
+
+[node name="p1" type="Marker2D" parent="Aimer/BezierPoints"]
+position = Vector2(18, 0)
+
+[node name="p2" type="Marker2D" parent="Aimer/BezierPoints"]
+position = Vector2(8, 9)
+
+[node name="AimSpot" type="Marker2D" parent="Aimer"]
+metadata/_edit_lock_ = true
