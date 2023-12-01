@@ -8,6 +8,3 @@ func _ready():
 
 func _process(_delta):
 	pass
-
-func _on_body_exited(_body):
-	collision_sound.play(global_position.x)
