@@ -43,6 +43,13 @@ primary_action={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Ball"
+2d_physics/layer_3="Walls"
+2d_physics/layer_4="Blocks"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

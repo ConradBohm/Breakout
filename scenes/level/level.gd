@@ -19,6 +19,6 @@ func _process(delta):
 func _on_paddle_ball_fired(paddle_position, direction):
 	var ball = ball_scene.instantiate() as RigidBody2D
 	ball.position = paddle_position
-	#ball.rotation = PI
-	ball.linear_velocity = direction * ball.speed
+	ball.rotation = PI
+	ball.linear_velocity = direction * -ball.speed
 	add_child(ball)
