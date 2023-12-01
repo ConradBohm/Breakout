@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://f2puqd2mdqvv"]
+
+[ext_resource type="Script" path="res://scenes/test.gd" id="1_etjbi"]
+[ext_resource type="Texture2D" uid="uid://b8wx24qrn5sr2" path="res://icon.svg" id="2_pxvs8"]
+
+[node name="test" type="Node2D"]
+script = ExtResource("1_etjbi")
+
+[node name="BezierPoints" type="Node2D" parent="."]
+
+[node name="p0" type="Marker2D" parent="BezierPoints"]
+position = Vector2(307, 325)
+
+[node name="p1" type="Marker2D" parent="BezierPoints"]
+position = Vector2(509, 220)
+
+[node name="p2" type="Marker2D" parent="BezierPoints"]
+position = Vector2(734, 325)
+
+[node name="large" type="Sprite2D" parent="."]
+position = Vector2(509, 478)
+texture = ExtResource("2_pxvs8")
+
+[node name="small" type="Sprite2D" parent="."]
+position = Vector2(260, 488)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_pxvs8")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 2.0

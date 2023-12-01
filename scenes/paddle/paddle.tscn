@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjgqrrltha5da" path="res://resources/square.png" id="2_2higq"]
 
 [node name="Paddle" type="CharacterBody2D"]
-scale = Vector2(5, 5)
+scale = Vector2(3, 3)
 collision_mask = 2
 motion_mode = 1
 slide_on_ceiling = false
@@ -23,7 +23,8 @@ polygon = PackedVector2Array(3, 0, 3, -2.4, 2.8, -6.2, 2.4, -8.4, 2, -8.8, 1.4, 
 
 [node name="Line2D" type="Line2D" parent="Aimer"]
 scale = Vector2(1, 1)
-width = 3.0
+width = 1.0
+default_color = Color(1, 1, 1, 0.478431)
 
 [node name="BezierPoints" type="Node2D" parent="Aimer"]
 metadata/_edit_lock_ = true
@@ -32,7 +33,7 @@ metadata/_edit_lock_ = true
 position = Vector2(8, -9)
 
 [node name="p1" type="Marker2D" parent="Aimer/BezierPoints"]
-position = Vector2(18, 0)
+position = Vector2(13, 0)
 
 [node name="p2" type="Marker2D" parent="Aimer/BezierPoints"]
 position = Vector2(8, 9)
