@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED : float = 500.0
+const SPEED : float = 550.0
 
 @onready var p0 : Vector2 = $Aimer/BezierPoints/p0.position
 @onready var p1 : Vector2 = $Aimer/BezierPoints/p1.position

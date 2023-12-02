@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://b47u5u5odamgp"]
+
+[ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_mt7q0"]
+[ext_resource type="FontFile" uid="uid://dflg3bb1odgoy" path="res://resources/Fonts/Paultine Groovy.otf" id="1_pntk6"]
+[ext_resource type="Texture2D" uid="uid://crsf1am7sfq1u" path="res://resources/Tiles/tile_0044.png" id="2_1aic2"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_mt7q0")
+
+[node name="Highscore" type="Label" parent="."]
+offset_left = 408.0
+offset_top = 43.0
+offset_right = 592.0
+offset_bottom = 104.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_pntk6")
+theme_override_font_sizes/font_size = 20
+text = "High: 00"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -143.0
+offset_right = 92.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_pntk6")
+theme_override_font_sizes/font_size = 20
+text = "00"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.92
+anchor_right = 0.1
+anchor_bottom = 0.92
+offset_top = -18.0
+offset_right = 62.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_1aic2")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_1aic2")
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_1aic2")
+
+[node name="HighScoreScreen" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.784314, 0.360784, 1)
+theme_override_fonts/font = ExtResource("1_pntk6")
+theme_override_font_sizes/font_size = 40
+text = "NEW HIGH SCORE"
+
+[node name="FinalScoreScreen" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -40.0
+offset_right = 43.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="FinalScoreScreen"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pntk6")
+theme_override_font_sizes/font_size = 40
+text = "Game Over"
+
+[node name="Score" type="Label" parent="FinalScoreScreen"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pntk6")
+theme_override_font_sizes/font_size = 30
+
+[node name="HighScore" type="Label" parent="FinalScoreScreen"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pntk6")
+theme_override_font_sizes/font_size = 30

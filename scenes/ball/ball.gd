@@ -8,3 +8,8 @@ func _ready():
 
 func _process(_delta):
 	pass
+
+
+func _on_body_entered(body):
+	if body.has_method("hit"):
+		body.hit()

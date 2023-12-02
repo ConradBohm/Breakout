@@ -19,7 +19,10 @@ var value : int = 25
 func _ready():
 	sprite.modulate = colour_list[randi() % colour_list.size()]
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+	
+func hit():
+	Globals.score += value
+	queue_free()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://lqoepm834nlk"]
+[gd_scene load_steps=8 format=3 uid="uid://lqoepm834nlk"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_3atge"]
 [ext_resource type="Texture2D" uid="uid://bjgqrrltha5da" path="res://resources/square.png" id="2_ngdxw"]
 [ext_resource type="PackedScene" uid="uid://d3ow077rnfo08" path="res://scenes/level/block.tscn" id="3_kfp8u"]
+[ext_resource type="PackedScene" uid="uid://b47u5u5odamgp" path="res://scenes/ui/ui.tscn" id="4_kg6fc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc68m"]
 size = Vector2(157, 1362)
@@ -11,7 +12,7 @@ size = Vector2(157, 1362)
 size = Vector2(1144, 119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oetk"]
-size = Vector2(1450, 20)
+size = Vector2(1450, 78)
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_3atge")
@@ -20,15 +21,20 @@ script = ExtResource("1_3atge")
 modulate = Color(0, 0, 0, 1)
 scale = Vector2(7.33333, 9.85034)
 texture = ExtResource("2_ngdxw")
+metadata/_edit_lock_ = true
 
 [node name="Units" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="PaddleSpawn" type="Marker2D" parent="Units"]
 position = Vector2(0, 520)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Walls" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 position = Vector2(-545, 0)
@@ -82,13 +88,16 @@ shape = SubResource("RectangleShape2D_hocvi")
 position = Vector2(0, 724)
 collision_layer = 4
 collision_mask = 2
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/DeadZone"]
+position = Vector2(0, -29)
 shape = SubResource("RectangleShape2D_5oetk")
 
 [node name="Blocks" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Block" parent="Blocks" instance=ExtResource("3_kfp8u")]
 position = Vector2(-228, -479)
@@ -467,5 +476,7 @@ position = Vector2(70, -316)
 
 [node name="Block73" parent="Blocks" instance=ExtResource("3_kfp8u")]
 position = Vector2(29, -316)
+
+[node name="UI" parent="." instance=ExtResource("4_kg6fc")]
 
 [connection signal="body_entered" from="Walls/DeadZone" to="." method="_on_dead_zone_body_entered"]
